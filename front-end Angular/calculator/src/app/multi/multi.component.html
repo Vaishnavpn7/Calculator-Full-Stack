@@ -1,0 +1,27 @@
+<div class="container">
+    <h1 class="text-center">Multiplication</h1>
+
+    <div class="row">
+        <div class="col-4"></div>
+        <div class="col-4">
+            <form action="" [formGroup]="multiForm" (ngSubmit)="performMulti()">
+
+                <div class="mb-3 p-3">
+                    <input type="text" class="form-control" placeholder="enter number" formControlName="num1">
+                    <div class="text-danger form-text" *ngIf="num1?.touched && num1?.invalid">Invalid Number</div>
+
+                    <div class="mb-3">
+                        <input type="text" class="form-control" placeholder="enter number" formControlName="num2">
+                        <div class="text-danger form-text" *ngIf="num2?.touched && num2?.invalid">Invalid Number</div>
+
+    
+                    </div>
+                    <div class="mb-3">
+                        <button type="submit" [disabled]="multiForm.invalid">Multiply</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <!-- <div class="col-4">{{result}}</div> -->
+    </div>
+</div>
